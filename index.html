@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAST COLOR</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main id="app">
+
+    <!-- INTRO -->
+    <section id="intro" class="page active">
+      <p class="eyebrow">A STORY ABOUT COLORS</p>
+
+      <h1 class="main-title">
+        LAST<br>COLOR
+      </h1>
+
+      <p class="intro-text">
+        คืนสุดท้ายก่อนสีจะหายไป
+      </p>
+
+      <button id="startBtn" class="text-button">
+        ENTER THE STORY ↗
+      </button>
+    </section>
+
+
+    <!-- STORY -->
+    <section id="story" class="page">
+
+      <div class="story-top">
+        <span id="storyCounter"></span>
+      </div>
+
+      <img
+        id="storyImage"
+        src="pics/transparent/chapter1.png"
+        class="cat-image draggable-artwork"
+        alt="แมวนำทางในเรื่องราว"
+        draggable="false"
+      >
+
+      <p id="storyText" class="story-text"></p>
+
+      <button id="storyNextBtn" class="text-button">
+        CONTINUE ↗
+      </button>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="page">
+
+      <div class="quiz-header">
+        <span id="questionCount"></span>
+        <span>LAST COLOR</span>
+      </div>
+
+      <div class="quiz-content">
+
+        <div class="question-artwork-wrap">
+          <img
+            id="questionArtwork"
+            src="pics/transparent/artboard-1.png"
+            alt=""
+            aria-hidden="true"
+            class="question-artwork draggable-artwork"
+            draggable="false"
+          >
+        </div>
+
+        <p id="questionIntro" class="question-intro"></p>
+
+        <h2 id="questionText" class="question-text"></h2>
+
+        <div id="answerList" class="answer-list"></div>
+
+      </div>
+
+      <div class="progress-wrap">
+        <div id="questionProgress" class="progress"></div>
+      </div>
+
+    </section>
+
+
+    <!-- ENDING -->
+    <section id="ending" class="page">
+      <p class="eyebrow">YOUR LAST COLOR</p>
+
+      <div id="resultColor" class="result-color"></div>
+
+      <h1 id="resultTitle" class="result-title"></h1>
+
+      <p id="resultSubtitle" class="result-subtitle"></p>
+
+      <p id="resultDescription" class="result-description"></p>
+
+      <p id="resultMessage" class="result-message"></p>
+
+      <button id="restartBtn" class="text-button">
+        BEGIN AGAIN ↗
+      </button>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
