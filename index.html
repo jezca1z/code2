@@ -6,12 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LAST COLOR</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <main id="app">
+
+    <button
+      id="audioToggle"
+      class="audio-toggle"
+      type="button"
+      aria-label="ปิดเสียง"
+      aria-pressed="true"
+    >
+      ♫ เสียงเปิด
+    </button>
 
     <!-- INTRO -->
     <section id="intro" class="page active">
@@ -30,6 +43,87 @@
       </button>
     </section>
 
+    <!-- TRAVELER PASS -->
+    <section id="traveler" class="page">
+      <p class="eyebrow">TRAVELER PASS</p>
+
+      <img
+        id="travelerImage"
+        src="chapter1.png"
+        class="cat-image draggable-artwork traveler-image"
+        alt="โมจิ แมวนำทาง"
+        draggable="false"
+      >
+
+      <p class="guide-caption">โมจิ · ไกด์นำทาง</p>
+      <p class="traveler-prompt">ก่อนออกเดินทาง ขอรู้จักเธอหน่อยนะ... เธอชื่ออะไร?</p>
+
+      <form id="travelerForm" class="traveler-form">
+        <div class="traveler-field">
+          <label for="travelerName">ชื่อที่อยากให้โมจิเรียก</label>
+          <input
+            id="travelerName"
+            name="name"
+            type="text"
+            maxlength="40"
+            autocomplete="nickname"
+            placeholder="เช่น น้องแพรว"
+            required
+          >
+        </div>
+
+        <div class="traveler-fields">
+          <div class="traveler-field">
+            <label for="travelerGrade">ตอนนี้เรียนอยู่ชั้นไหน?</label>
+            <select id="travelerGrade" name="grade" required>
+              <option value="">เลือกชั้นเรียน</option>
+              <option>ม.1</option>
+              <option>ม.2</option>
+              <option>ม.3</option>
+              <option>ม.4</option>
+              <option>ม.5</option>
+              <option>ม.6</option>
+              <option>ปวช. 1</option>
+              <option>ปวช. 2</option>
+              <option>ปวช. 3</option>
+              <option>ปวส.</option>
+              <option>อื่น ๆ</option>
+            </select>
+          </div>
+
+          <div class="traveler-field">
+            <label for="travelerProvince">มาจากจังหวัดไหน?</label>
+            <input
+              id="travelerProvince"
+              name="province"
+              type="text"
+              maxlength="50"
+              autocomplete="address-level1"
+              placeholder="เช่น เชียงใหม่"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="traveler-field">
+          <label for="travelerInterest">สนใจสาขาไหนของคณะดิจิทัลมีเดีย ม.ศรีปทุม?</label>
+          <select id="travelerInterest" name="interest" required>
+            <option value="">เลือกสาขาที่สนใจ</option>
+            <option value="DGA">Digital Arts (DGA)</option>
+            <option value="DGD">Digital Graphic Design (DGD)</option>
+            <option value="IGD">Interactive and Game Design (IGD)</option>
+            <option value="AFX">Computer Animation and Visual Effects (AFX)</option>
+            <option value="DEN">Digital Entertainment (DEN)</option>
+            <option value="UNDECIDED">ยังไม่แน่ใจ ขอเดินดูก่อน</option>
+          </select>
+        </div>
+
+        <button class="text-button traveler-submit" type="submit">
+          MAKE MY TRAVEL PASS ↗
+        </button>
+      </form>
+    </section>
+
 
     <!-- STORY -->
     <section id="story" class="page">
@@ -46,7 +140,19 @@
         draggable="false"
       >
 
+      <p id="storyGuideName" class="guide-caption">โมจิ · ไกด์นำทาง</p>
+      <p id="travelerNameDisplay" class="traveler-name"></p>
+
+      <h1 id="storyTitle" class="story-title"></h1>
+
       <p id="storyText" class="story-text"></p>
+
+      <div id="travelerPassCard" class="traveler-pass" hidden>
+        <strong>TRAVELER PASS</strong>
+        <span id="travelerPassGrade"></span>
+        <span id="travelerPassProvince"></span>
+        <span id="travelerPassInterest"></span>
+      </div>
 
       <button id="storyNextBtn" class="text-button">
         CONTINUE ↗
@@ -103,7 +209,7 @@
 
       <p id="resultDescription" class="result-description"></p>
 
-      <p id="resultMessage" class="result-message"></p>
+      <div id="resultCareers" class="result-careers" aria-live="polite"></div>
 
       <button id="restartBtn" class="text-button">
         BEGIN AGAIN ↗
