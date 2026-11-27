@@ -158,17 +158,17 @@ makeArtworkDraggable(questionArtwork);
 const storyPages = [
   {
     text: "ในเมืองที่ทุกอย่างเป็นสีดำและสีขาว เด็กคนหนึ่งใช้ชีวิตเหมือนเดิมทุกวัน ตื่นขึ้นมา เดินไปที่เดิม และกลับบ้านโดยไม่รู้ว่าตัวเองกำลังรออะไรอยู่",
-    image: "pics/transparent/chapter1.png"
+    image: "chapter1.png"
   },
 
   {
     text: "คืนหนึ่ง ขณะที่กำลังเดินหลงอยู่ในถนนที่ไม่คุ้นเคย แมวตัวหนึ่งก็ปรากฏขึ้น มันมองเด็กคนนั้นแล้วพูดว่า... สีสุดท้ายกำลังจะหายไป ถ้าอยากรู้ว่ามันคือสีอะไร ก็เดินตามฉันมา",
-    image: "pics/transparent/chapter2.png"
+    image: "chapter2.png"
   },
 
   {
     text: "แมวพาเด็กเดินผ่านสถานที่ที่ไม่เคยเห็นมาก่อน พร้อมถามคำถามแปลก ๆ ราวกับกำลังพยายามค้นหาบางสิ่งที่ซ่อนอยู่ในใจของเด็กคนนั้น",
-    image: "pics/transparent/chapter3.png"
+    image: "chapter3.png"
   }
 ];
 
@@ -499,7 +499,7 @@ function renderQuestion() {
 
   if (currentQuestion < 6) {
     questionArtwork.src =
-      `pics/transparent/artboard-${currentQuestion + 1}.png`;
+      `artboard-${currentQuestion + 1}.png`;
     questionArtwork.parentElement.hidden = false;
   } else {
     questionArtwork.parentElement.hidden = true;
