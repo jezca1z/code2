@@ -157,17 +157,17 @@ makeArtworkDraggable(questionArtwork);
 
 const storyPages = [
   {
-    text: "ในเมืองที่ทุกอย่างเป็นสีดำและสีขาว เด็กคนหนึ่งใช้ชีวิตเหมือนเดิมทุกวัน ตื่นขึ้นมา เดินไปที่เดิม และกลับบ้านโดยไม่รู้ว่าตัวเองกำลังรออะไรอยู่",
+    text: "คืนก่อนวันจัดแสดงผลงานของคณะ ไฟในสตูดิโอดับลงทีละดวง สีบนชิ้นงานและรอบตัวเพื่อน ๆ ค่อย ๆ จางหาย เหลือเพียงแมวลายเส้นสีขาวที่กระโดดลงมาจากโต๊ะ",
     image: "chapter1.png"
   },
 
   {
-    text: "คืนหนึ่ง ขณะที่กำลังเดินหลงอยู่ในถนนที่ไม่คุ้นเคย แมวตัวหนึ่งก็ปรากฏขึ้น มันมองเด็กคนนั้นแล้วพูดว่า... สีสุดท้ายกำลังจะหายไป ถ้าอยากรู้ว่ามันคือสีอะไร ก็เดินตามฉันมา",
+    text: "แมวแนะนำตัวว่าเป็นไกด์ของสาขา และบอกว่าสีไม่ได้หายไปไหน มันซ่อนอยู่ในไอเดีย ความทรงจำ และน้ำใจที่เพื่อนมีให้กัน ถ้าช่วยกันก่อนฟ้าสาง สีของคณะก็จะกลับมา",
     image: "chapter2.png"
   },
 
   {
-    text: "แมวพาเด็กเดินผ่านสถานที่ที่ไม่เคยเห็นมาก่อน พร้อมถามคำถามแปลก ๆ ราวกับกำลังพยายามค้นหาบางสิ่งที่ซ่อนอยู่ในใจของเด็กคนนั้น",
+    text: "แมวพาทุกคนออกจากสตูดิโอไปตามหาสีที่กระจัดกระจาย ทุกการตัดสินใจช่วยให้ผลงานและพื้นที่รอบตัวมีสีขึ้นทีละน้อย แต่สีสุดท้ายจะเป็นแบบไหน ขึ้นอยู่กับสิ่งที่พวกเขาเลือกทำร่วมกัน",
     image: "chapter3.png"
   }
 ];
@@ -182,126 +182,133 @@ let currentStory = 0;
 const questions = [
 
   {
-    intro: "แมว : ถ้าไม่มีใครมองเห็นนายเลย...",
-    text: "นายอยากใช้เวลาที่เหลือไปกับอะไร?",
+    intro: "แมว : แผ่นสีแผ่นแรกหายไปจากงานของเพื่อน...",
+    text: "พวกเราควรเริ่มช่วยกันจากตรงไหน?",
 
     answers: [
-      { text: "ออกไปลองอะไรที่ไม่เคยทำ", type: "FREE" },
-      { text: "ไปหาคนที่คิดถึง", type: "MEMORY" },
-      { text: "ทำอะไรเล็ก ๆ ที่ทำให้ยิ้มได้", type: "HAPPY" },
-      { text: "นั่งเงียบ ๆ ปล่อยให้เวลาผ่านไป", type: "CALM" }
+      { text: "ลองวิธีใหม่ แม้ยังไม่มีใครเคยทำ", type: "FREE" },
+      { text: "ชวนเจ้าของงานเล่าว่าตั้งใจสื่ออะไร", type: "MEMORY" },
+      { text: "เปิดเพลงที่ทุกคนชอบแล้วเริ่มลงมือด้วยกัน", type: "HAPPY" },
+      { text: "ค่อย ๆ ตรวจงานและหาจุดที่สีเริ่มหาย", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : แล้วถ้าพรุ่งนี้ไม่มีอะไรเหมือนเดิม...",
-    text: "อะไรที่นายกลัวว่าจะหายไปมากที่สุด?",
+    intro: "แมว : ที่โต๊ะมุมห้อง มีเพื่อนคนหนึ่งยังทำงานอยู่ลำพัง...",
+    text: "เราจะชวนเขามาร่วมตามหาสีได้อย่างไร?",
 
     answers: [
-      { text: "อิสระที่จะเลือกชีวิตตัวเอง", type: "FREE" },
-      { text: "คนที่ทำให้รู้สึกว่าไม่ได้อยู่คนเดียว", type: "MEMORY" },
-      { text: "ช่วงเวลาที่มีความสุข", type: "HAPPY" },
-      { text: "ความรู้สึกปลอดภัย", type: "CALM" }
+      { text: "ชวนเขาทดลองทำชิ้นงานในแบบของตัวเอง", type: "FREE" },
+      { text: "เข้าไปนั่งข้าง ๆ และฟังว่าเขากังวลอะไร", type: "MEMORY" },
+      { text: "ชวนพักเบรกสั้น ๆ ให้หายเหนื่อยก่อน", type: "HAPPY" },
+      { text: "ช่วยแบ่งงานให้พอดีและวางแผนไปด้วยกัน", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : มนุษย์นี่แปลกนะ...",
-    text: "ถ้าเลือกเก็บหนึ่งช่วงเวลาไว้ตลอดไป นายจะเลือก?",
+    intro: "แมว : บนบอร์ดมีภาพร่างจากหลายวิชา แต่บางส่วนซีดหาย...",
+    text: "อะไรจะช่วยให้ทุกคนต่อไอเดียเข้าด้วยกัน?",
 
     answers: [
-      { text: "วันที่ได้ทำตามใจตัวเอง", type: "FREE" },
-      { text: "วันที่อยู่กับคนสำคัญ", type: "MEMORY" },
-      { text: "วันที่หัวเราะจนหยุดไม่ได้", type: "HAPPY" },
-      { text: "วันที่ไม่มีเรื่องให้กังวล", type: "CALM" }
+      { text: "เปิดพื้นที่ให้แต่ละคนลองเสนอไอเดียที่ต่างกัน", type: "FREE" },
+      { text: "หยิบเรื่องราวและแรงบันดาลใจของเพื่อนมาเชื่อมกัน", type: "MEMORY" },
+      { text: "เปลี่ยนเป็นกิจกรรมวาดต่อภาพที่ทุกคนเล่นได้", type: "HAPPY" },
+      { text: "จัดหมวดภาพร่างแล้วเรียงลำดับให้เห็นภาพรวม", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : บางครั้งการเดินทางก็ไม่ได้สนุกเสมอไป...",
-    text: "เมื่อเจอวันที่แย่ นายมักจะทำอย่างไร?",
+    intro: "แมว : พอเดินถึงโถงคณะ ความเห็นของทีมก็เริ่มไม่ตรงกัน...",
+    text: "เราจะตัดสินใจอย่างไรโดยไม่ทิ้งใครไว้ข้างหลัง?",
 
     answers: [
-      { text: "หนีไปที่ไหนสักแห่ง", type: "FREE" },
-      { text: "คุยกับใครสักคนที่ไว้ใจ", type: "MEMORY" },
-      { text: "หาอะไรที่ทำให้ตัวเองอารมณ์ดี", type: "HAPPY" },
-      { text: "อยู่คนเดียวจนกว่าจะดีขึ้น", type: "CALM" }
+      { text: "ลองทำต้นแบบสองแนวแล้วดูว่าแนวไหนพาไปต่อได้", type: "FREE" },
+      { text: "ให้ทุกคนเล่าเหตุผล แล้วหาจุดที่เห็นตรงกัน", type: "MEMORY" },
+      { text: "พักหายใจ หามุกขำ ๆ แล้วกลับมาคุยกันใหม่", type: "HAPPY" },
+      { text: "เขียนข้อดีข้อเสียและเลือกแผนที่ทำได้จริง", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : ถ้ามีประตูสี่บานอยู่ตรงหน้า...",
-    text: "นายจะเปิดประตูที่พาไปไหน?",
+    intro: "แมวพาไปถึงทางเชื่อมระหว่างห้องเรียนกับสตูดิโอ...",
+    text: "ป้ายบอกทางหายไป เราจะพาเพื่อน ๆ ไปต่ออย่างไร?",
 
     answers: [
-      { text: "โลกที่ไม่มีข้อจำกัด", type: "FREE" },
-      { text: "โลกที่ได้พบคนที่หายไป", type: "MEMORY" },
-      { text: "โลกที่เต็มไปด้วยเรื่องสนุก", type: "HAPPY" },
-      { text: "โลกที่ไม่มีเสียงรบกวน", type: "CALM" }
+      { text: "สำรวจทางเดินใหม่แล้ววาดแผนที่ขึ้นมาเอง", type: "FREE" },
+      { text: "ถามรุ่นพี่ที่จำเรื่องราวของตึกนี้ได้", type: "MEMORY" },
+      { text: "ทำป้ายสีสด ๆ ให้ทุกคนช่วยกันติด", type: "HAPPY" },
+      { text: "เช็กแผนผังอาคารและเลือกทางที่ปลอดภัยที่สุด", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : นายเคยคิดถึงตัวเองในอดีตไหม...",
-    text: "ถ้าได้ย้อนกลับไป นายอยากบอกอะไรกับตัวเอง?",
+    intro: "แมว : มีเพื่อนปีหนึ่งยืนถือผลงานอยู่หน้าห้อง ไม่กล้าเอาไปวาง...",
+    text: "พวกเราจะช่วยให้เขากล้าร่วมงานได้อย่างไร?",
 
     answers: [
-      { text: "อย่าหยุดลองสิ่งที่อยากทำ", type: "FREE" },
-      { text: "อย่าลืมคนที่รักนาย", type: "MEMORY" },
-      { text: "อย่าลืมหัวเราะให้มากกว่านี้", type: "HAPPY" },
-      { text: "ไม่เป็นไรนะ ทุกอย่างจะค่อย ๆ ดีขึ้น", type: "CALM" }
+      { text: "ชวนเขาลองจัดวางผลงานในแบบที่อยากนำเสนอ", type: "FREE" },
+      { text: "บอกว่าเราจะอยู่ข้าง ๆ และช่วยแนะนำให้", type: "MEMORY" },
+      { text: "ชวนเพื่อน ๆ มาชมและให้กำลังใจพร้อมกัน", type: "HAPPY" },
+      { text: "ช่วยหามุมจัดแสดงที่เขารู้สึกสบายใจ", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : แล้วสิ่งเล็ก ๆ ที่ทำให้โลกยังน่าอยู่ล่ะ...",
-    text: "สิ่งไหนทำให้นายรู้สึกว่าชีวิตมีความหมาย?",
+    intro: "แมวเปิดโปรเจกเตอร์เก่าของสาขา ภาพผลงานเริ่มมีสีขึ้นมานิดหนึ่ง...",
+    text: "เราควรใช้แสงที่เหลืออยู่ทำอะไรต่อ?",
 
     answers: [
-      { text: "การได้ใช้ชีวิตในแบบของตัวเอง", type: "FREE" },
-      { text: "การได้มีใครสักคนอยู่ข้าง ๆ", type: "MEMORY" },
-      { text: "เสียงหัวเราะและความสนุก", type: "HAPPY" },
-      { text: "ความสงบที่ไม่ต้องฝืนอะไร", type: "CALM" }
+      { text: "ฉายภาพทดลองหลายแบบเพื่อหาแนวทางที่ไม่เคยลอง", type: "FREE" },
+      { text: "ฉายภาพเบื้องหลังที่เพื่อน ๆ ทำงานด้วยกัน", type: "MEMORY" },
+      { text: "ฉายภาพสนุก ๆ ให้ทั้งคณะมาช่วยเติมสี", type: "HAPPY" },
+      { text: "ปรับแสงทีละจุดเพื่อให้ทุกชิ้นงานมองเห็นชัด", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : ถ้านายต้องเลือกสิ่งหนึ่งเพื่อเดินต่อ...",
-    text: "นายจะเลือกพกอะไรติดตัวไป?",
+    intro: "ใกล้ถึงเวลาเปิดนิทรรศการ แต่ทีมยังต้องเตรียมอีกหลายอย่าง...",
+    text: "เราควรจัดการช่วงเวลาสุดท้ายอย่างไร?",
 
     answers: [
-      { text: "ความกล้าที่จะเริ่มต้นใหม่", type: "FREE" },
-      { text: "ความทรงจำที่มีค่า", type: "MEMORY" },
-      { text: "ความหวังว่าจะมีเรื่องดี ๆ", type: "HAPPY" },
-      { text: "ความรู้สึกว่าฉันยังเป็นฉัน", type: "CALM" }
+      { text: "แบ่งทีมลองทำรายละเอียดใหม่ที่ยังขาดอยู่", type: "FREE" },
+      { text: "เช็กให้แน่ใจว่าทุกคนได้มีส่วนในผลงาน", type: "MEMORY" },
+      { text: "ชวนกันทำงานพร้อมเสียงเพลงและกำลังใจ", type: "HAPPY" },
+      { text: "เรียงลำดับงานสำคัญแล้วค่อย ๆ ทำทีละอย่าง", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : บางอย่างอาจไม่กลับมาอีกแล้ว...",
-    text: "ถ้าต้องปล่อยบางสิ่งไป นายคิดว่าอะไรยากที่สุด?",
+    intro: "ผลงานส่วนใหญ่กลับมามีสีแล้ว แต่ยังมีมุมหนึ่งที่เงียบและว่างเปล่า...",
+    text: "เราจะเติมพื้นที่นั้นด้วยอะไร?",
 
     answers: [
-      { text: "การยอมรับว่าตัวเองไม่ได้เป็นอิสระเสมอไป", type: "FREE" },
-      { text: "การบอกลาใครบางคน", type: "MEMORY" },
-      { text: "การยอมรับว่าช่วงเวลาที่ดีจบลงแล้ว", type: "HAPPY" },
-      { text: "การยอมรับการเปลี่ยนแปลง", type: "CALM" }
+      { text: "งานทดลองที่เปิดโอกาสให้คนดูคิดต่อเอง", type: "FREE" },
+      { text: "เรื่องเล่าจากเพื่อน ๆ ในคณะและสาขา", type: "MEMORY" },
+      { text: "กิจกรรมสั้น ๆ ที่ชวนทุกคนมาสนุกด้วยกัน", type: "HAPPY" },
+      { text: "มุมพักที่เรียบง่ายและให้ทุกคนได้หยุดมองงาน", type: "CALM" }
     ]
   },
 
   {
-    intro: "แมว : คำถามสุดท้ายแล้ว...",
-    text: "ถ้าสีสุดท้ายของโลกเป็นสิ่งที่นายต้องเลือกเอง นายอยากให้มันเป็นสีอะไรในความรู้สึก?",
+    intro: "แมวถามก่อนแสงเช้าจะมาถึง...",
+    text: "ถ้าจะมอบสีสุดท้ายให้คณะของเรา อยากให้สีนั้นแทนอะไร?",
 
     answers: [
-      { text: "สีของการเริ่มต้นและอิสระ", type: "FREE" },
-      { text: "สีของความทรงจำและความรัก", type: "MEMORY" },
-      { text: "สีของความสุขและชีวิต", type: "HAPPY" },
-      { text: "สีของความสงบและการยอมรับ", type: "CALM" }
+      { text: "อิสระที่จะคิดและเริ่มต้นสิ่งใหม่", type: "FREE" },
+      { text: "มิตรภาพและความทรงจำที่สร้างด้วยกัน", type: "MEMORY" },
+      { text: "ความสุขที่แบ่งปันกันได้ทั้งสาขา", type: "HAPPY" },
+      { text: "ความสงบและพื้นที่ให้ทุกคนเป็นตัวเอง", type: "CALM" }
     ]
   }
 
 ];
+
+const choiceEchoes = {
+  FREE: "แมวพาเพื่อน ๆ ลองเส้นทางใหม่ และประกายสีฟ้าก็วาบขึ้น",
+  MEMORY: "แมวรอให้ทุกคนเดินไปด้วยกัน สีม่วงอ่อนจึงค่อย ๆ ปรากฏ",
+  HAPPY: "เสียงหัวเราะของเพื่อน ๆ เติมประกายสีเหลืองให้เมือง",
+  CALM: "ทุกคนช่วยกันอย่างใจเย็น แสงสีเขียวจึงค่อย ๆ สว่างขึ้น"
+};
 
 
 /* =========================
@@ -377,6 +384,36 @@ let score = {
 
 let currentQuestion = 0;
 let selectedAnswer = null;
+let lastChoiceType = null;
+
+const worldColors = {
+  FREE: "#69B9FF",
+  MEMORY: "#B89AFF",
+  HAPPY: "#FFE16B",
+  CALM: "#91D8A5"
+};
+
+function hexToRgb(hex) {
+  return [1, 3, 5].map(start => parseInt(hex.slice(start, start + 2), 16));
+}
+
+function updateWorldColor(completedSteps) {
+  const answerCount = Object.values(score).reduce((total, value) => total + value, 0);
+  const storyMoodOrder = ["FREE", "MEMORY", "HAPPY"];
+  const targetColor = answerCount === 0
+    ? hexToRgb(worldColors[storyMoodOrder[Math.min(Math.max(completedSteps - 1, 0), storyMoodOrder.length - 1)]])
+    : Object.entries(score).reduce((totals, [type, value]) => {
+      hexToRgb(worldColors[type]).forEach((channel, index) => {
+        totals[index] += channel * value;
+      });
+      return totals;
+    }, [0, 0, 0]).map(channel => channel / answerCount);
+  const progress = Math.min(Math.max(completedSteps / (storyPages.length + questions.length), 0), 1);
+  const colorStrength = progress * 0.42;
+  const color = targetColor.map(channel => Math.round(8 + (channel - 8) * colorStrength));
+
+  document.body.style.backgroundColor = `rgb(${color.join(", ")})`;
+}
 
 
 /* =========================
@@ -402,6 +439,8 @@ function showPage(pageId) {
 startBtn.addEventListener("click", () => {
 
   currentStory = 0;
+  lastChoiceType = null;
+  updateWorldColor(0);
 
   showStory();
 
@@ -429,6 +468,8 @@ function showStory() {
 
   storyCounter.textContent =
     `STORY ${currentStory + 1} / ${storyPages.length}`;
+
+  updateWorldColor(currentStory + 1);
 
 }
 
@@ -468,6 +509,8 @@ function startQuiz() {
     HAPPY: 0,
     CALM: 0
   };
+  lastChoiceType = null;
+  updateWorldColor(storyPages.length);
 
   showPage("quiz");
 
@@ -489,8 +532,9 @@ function renderQuestion() {
   questionCount.textContent =
     `QUESTION ${currentQuestion + 1} / ${questions.length}`;
 
-  questionIntro.textContent =
-    question.intro;
+  questionIntro.textContent = lastChoiceType
+    ? `${choiceEchoes[lastChoiceType]} ${question.intro}`
+    : question.intro;
 
   questionText.textContent =
     question.text;
@@ -553,6 +597,8 @@ function selectAnswer(index) {
   const answer = question.answers[index];
 
   score[answer.type]++;
+  lastChoiceType = answer.type;
+  updateWorldColor(storyPages.length + currentQuestion + 1);
 
   const buttons =
     answerList.querySelectorAll(".answer-btn");
@@ -632,6 +678,7 @@ function getResult() {
 function showResult() {
 
   const result = getResult();
+  updateWorldColor(storyPages.length + questions.length);
 
   resultColor.style.backgroundColor =
     result.color;
@@ -669,8 +716,10 @@ restartBtn.addEventListener("click", () => {
     HAPPY: 0,
     CALM: 0
   };
+  lastChoiceType = null;
 
   questionProgress.style.width = "0%";
+  updateWorldColor(0);
 
   showPage("intro");
 
